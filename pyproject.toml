@@ -1,0 +1,62 @@
+# tox (https://tox.readthedocs.io/) is a tool for running tests
+# in multiple virtualenvs. This configuration file will run the
+# test suite on all supported python versions. To use it, "pip install tox"
+# and then run "tox" from this directory.
+
+[tool.poetry]
+name = "pyxloptimizer"
+version = "0.1.0"
+description = "Your project description"
+authors = ["Mark Teper"]
+readme = "README.md"
+packages = [{ include = "pyxloptimizer" }]
+
+[tool.poetry.group.dev.dependencies]
+pytest-benchmark = "^4.0.0"
+xlcalculator = "^0.5.0"
+formulas = "^1.2.7"
+pytest-profiling = "^1.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openpyxl = "^3.1.2"
+numba = "^0.59.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
+flake8 = "^3.9"
+coverage = "^5.5"
+
+[tool.flake8]
+exclude = ".venv"
+max-line-length = 120
+extend-ignore = "W503, E203, E701, E303"
+per-file-ignores = """
+    __init__.py: F401
+    ./src/*: E402
+"""
+
+[tool.coverage.run]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+exclude_also = [
+    'pass',
+    'raise NotImplementedError',
+    'raise AssertionError',
+    'case _'
+]
+
+[tool.pytest.ini_options]
+filterwarnings = ["ignore::DeprecationWarning:openpyxl",
+    "ignore::DeprecationWarning:astor"
+]
+#enable code-coverage automatically
+#addopts = "--maxfail=10 --doctest-modules"
+#addopts = "--cov=pyxloptimizer --cov-report html --cov-report term --maxfail=10"
+addopts = "--doctest-modules --cov=pyxloptimizer --cov-report html --cov-report term --maxfail=3 --benchmark"
+benchmark-group-by = "param:name"
