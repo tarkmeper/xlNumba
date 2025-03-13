@@ -19,7 +19,7 @@ OPTIMIZATION_LIST = {
 def optimize_graph(graph: Graph, disable_optimization) -> Graph:
     logger.debug("Graph optimization started")
     for name, optimization in OPTIMIZATION_LIST.items():
-        if not disable_optimization or not disable_optimization:
+        if not disable_optimization:
             logger.debug(f"Optimization {name} starting")
             graph = optimization(graph)
             logger.debug(f"Optimization {name} complete")

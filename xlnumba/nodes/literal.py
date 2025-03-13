@@ -29,7 +29,7 @@ class LiteralNode(Node):
             case token.LOGICAL:
                 result = LiteralNode(varname, token.value.lower() == "true")
             case _:
-                raise NotImplemented(f"Unknown operator token of subtype {token.subtype} and value {token.value}")
+                raise NotImplementedError(f"Unknown operator token of subtype {token.subtype} and value {token.value}")
         return result
 
     @property
