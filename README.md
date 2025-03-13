@@ -1,8 +1,5 @@
-# PyxlOptimizer
-This library is inspired by a combination of the excellent PyCel llibrary and Numba.  This library can take an Excel 
-sheet and compile it into Python code.
+# xlNumba
 
-This library does 
 
 ## Basic Example
 XYZ generates the 
