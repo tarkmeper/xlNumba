@@ -91,8 +91,10 @@ class Compiler:
         """
         fn = self._gen_ast(disable_numba, disable_optimizations)
 
+        logger.debug("Starting AST compilation")
         exec_ctx = get_execution_context()
         evaluate([fn], exec_ctx, "CORE")
+        logger.debug("Completed AST compilation")
         return exec_ctx[FNC_NAME]
 
     def _gen_ast(self, disable_numba: bool, disable_optimizations: bool):

@@ -2,6 +2,7 @@
 Helper functions for implementing Excel stastical functions.
 """
 import numpy as np
+import scipy
 from numba import jit_module
 
 
@@ -15,11 +16,18 @@ def small(arr, k):
     return np.partition(tmp, k)[k - 1]
 
 
+def combina(n, k, exact, repitition):
+    return scipy.special.comb(n, k, exact=exact, repetition=repitition)
+
+
 def _ifs_reduce(arr, invalid, *args):
     """
     This is somewhat fun - similar to C++ meta programming numba has issues applying the where clause directly to
     the array.  Instead, we use a recursive technique to create a new version of the function stripping off the last
     two arguments.
+
+    This actually doesn't work well; wind up with a lot of errors in testing due to compiling one way and then not
+    compilng again for slightly different types or nesting.  Likely need more experimentation here.
 
     >>> _ifs_reduce.py_func([1,2], 10, np.array([5, 3]), 3)
     array([10,  2])
