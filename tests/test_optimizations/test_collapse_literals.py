@@ -1,9 +1,8 @@
 import ast
 
-from pyxloptimizer.nodes import LiteralNode, FunctionOpNode, BinOpNode, ExcelArrayNode, IndexNode
-import pyxloptimizer.excel_functions as excel_functions
-from pyxloptimizer.shape import Shape
-
+import xlnumba.excel_functions as excel_functions
+from xlnumba.nodes import LiteralNode, FunctionOpNode, BinOpNode, ExcelArrayNode, IndexNode
+from xlnumba.shape import Shape
 from ..util import get_collapsed_result
 
 

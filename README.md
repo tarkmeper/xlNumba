@@ -9,9 +9,8 @@ XYZ generates the
 
 ## User Defined Functions example.
 
-If the f
+Can create custom functions for the library to use with the decorator *xlnumba_function*
 
-If this is a standard Excel function please submit as a pull request to include in the library.
 
 @xlnumba_function("EXCEL_FNC_NAME")
 def custom_func(x):7

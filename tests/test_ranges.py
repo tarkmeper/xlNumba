@@ -1,7 +1,7 @@
 import openpyxl
 import pytest
 
-from pyxloptimizer import Compiler
+from xlnumba import Compiler
 from .util import get_param_from_sheet
 
 FILE_NAME = 'tests/fixtures/ranges.xlsx'

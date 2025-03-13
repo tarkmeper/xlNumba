@@ -1,10 +1,17 @@
-import pytest
 import openpyxl
+import pytest
 
-from pyxloptimizer import Compiler
+from xlnumba import Compiler
 
-from pycel import ExcelCompiler
-import formulas
+try:
+    from pycel import ExcelCompiler
+except ModuleNotFoundError:
+    ExcelCompiler = None
+
+try:
+    import formulas
+except ModuleNotFoundError:
+    formulas = None
 
 FILE_NAME = 'tests/fixtures/benchmark.xlsx'
 EXCEL_NAME = FILE_NAME.split("/")[-1]
@@ -127,7 +134,7 @@ def _run_benchmark(wb, benchmark, engine, sheet, input_cell, output_cell, expect
             fn(incr=_next_idx())
 
         benchmark(runner)
-    elif engine == 'pycel':
+    elif engine == 'pycel' and ExcelCompiler is not None:
         val = ExcelCompiler(FILE_NAME)
         val.evaluate(f'{sheet}!{output_cell}')
         val.set_value(f'{sheet}!{input_cell}', 2.000)
@@ -139,7 +146,7 @@ def _run_benchmark(wb, benchmark, engine, sheet, input_cell, output_cell, expect
             val.evaluate(f'{sheet}!{output_cell}')
 
         benchmark(runner)
-    elif engine == 'formulas':
+    elif engine == 'formulas' and formulas is not None:
         model = formulas.ExcelModel().loads(FILE_NAME).finish()
         # func = model.compile(
         #    inputs={f"'[{EXCEL_NAME}]{sheet}'!{input_cell}": 2.000},

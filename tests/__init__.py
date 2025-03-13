@@ -1,5 +1,6 @@
-from pyxloptimizer import logger, VERBOSE_LOG_LEVEL
 import logging
+
+from xlnumba import logger, VERBOSE_LOG_LEVEL
 
 # create the  verbose logging
 logging.addLevelName(VERBOSE_LOG_LEVEL, "VERBOSE")

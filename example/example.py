@@ -1,4 +1,4 @@
-from pyxloptimizer import Compiler
+from xlnumba import Compiler
 
 if __name__ == '__main__':
     ctx = Compiler("tests/fixtures/basic")

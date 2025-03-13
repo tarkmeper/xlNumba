@@ -1,8 +1,8 @@
 import openpyxl
 import pytest
 
-from pyxloptimizer import Compiler, InvalidExcelReferenceException, UnsupportedException
-from pyxloptimizer.excel_functions import find_function_details
+from xlnumba import Compiler, InvalidExcelReferenceException, UnsupportedException
+from xlnumba.excel_functions import find_function_details
 
 
 @pytest.fixture(scope='module')

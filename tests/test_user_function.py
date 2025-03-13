@@ -1,8 +1,6 @@
-from pyxloptimizer import xlnumba_function
-
-from pyxloptimizer.nodes import LiteralNode, FunctionOpNode
-from pyxloptimizer.excel_functions import find_function_details
-
+from xlnumba import xlnumba_function
+from xlnumba.excel_functions import find_function_details
+from xlnumba.nodes import LiteralNode, FunctionOpNode
 from .util import get_collapsed_result
 
 

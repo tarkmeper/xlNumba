@@ -1,7 +1,7 @@
-import pytest
 import openpyxl
+import pytest
 
-from pyxloptimizer.excel_reference import ExcelReference
+from xlnumba.excel_reference import ExcelReference
 
 
 @pytest.fixture(scope='module')

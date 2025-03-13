@@ -1,9 +1,9 @@
-import pytest
 import openpyxl
+import pytest
 
+import xlnumba.excel_functions as excel_functions
+from xlnumba import UnsupportedException
 from .util import get_param_from_sheet, default_test
-import pyxloptimizer.excel_functions as excel_functions
-from pyxloptimizer import UnsupportedException
 
 FILE_NAME = 'tests/fixtures/functions.xlsx'
 

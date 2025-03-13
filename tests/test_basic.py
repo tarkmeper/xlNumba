@@ -1,7 +1,7 @@
 import openpyxl
 import pytest
 
-from pyxloptimizer import Compiler
+from xlnumba import Compiler
 
 
 @pytest.fixture(scope='module')

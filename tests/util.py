@@ -1,9 +1,9 @@
 import openpyxl
 import pytest
 
-from pyxloptimizer import Compiler, logger
-from pyxloptimizer.nodes import LiteralNode, wrap_output
-from pyxloptimizer.optimizations import collapse_literals
+from xlnumba import Compiler, logger
+from xlnumba.nodes import LiteralNode, wrap_output
+from xlnumba.optimizations import collapse_literals
 
 
 def get_collapsed_result(node):

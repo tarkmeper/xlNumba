@@ -3,7 +3,7 @@ import openpyxl
 import pytest
 from numba import jit
 
-from pyxloptimizer import Compiler
+from xlnumba import Compiler
 
 FILE_NAME = 'tests/fixtures/random.xlsx'
 
