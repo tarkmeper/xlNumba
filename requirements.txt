@@ -1,9 +1,0 @@
-numba
-numpy
-pytest
-pytest-cov
-openpyxl
-tox
-astor
-scipy
-pytest-benchmark
