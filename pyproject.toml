@@ -15,7 +15,7 @@ dependencies = [
 description = "A package for converting excel files to Numba optimized python code"
 license = "MIT"
 keywords = ["excel", "numba", "optimization"]
-readme = "Readme.md"
+readme = "README.md"
 requires-python = ">=3.12"
 classifiers = [
     "Development Status :: 4 - Beta",
